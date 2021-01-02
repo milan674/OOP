@@ -1,16 +1,23 @@
 /*
-
+ Könyvnyilvántartó program
+ Készítsen C++ osztályokat könyvek adatainak tárolására, az alábbi specifikációk alapján!
+ Készítsen egy Konyv osztályt egy könyv adatainak tárolására: cím, szerző, kiadás éve.
+ Az adatokat ne lehessen az osztályon kívülről módosítani, csak getter függvényekkel lekérdezni.
+ Készítsen egy Kotet osztályt, ami a Konyv osztályból származik, és hozzáfér annak adattagjaihoz, valamint két további adattagja van: sorozat neve, és kötetszám.
+ A Konyv és Kotet osztályoknak ne legyen paraméter nélküli konstruktora, csak az összes adattag inicializálásával lehessen őket létrehozni.
+ Készítsen egy Konyvtar osztályt, ami Konyv és Kotet objektumokat képes tárolni.
+ Legyen képes előre ismeretlen számú könyvet és sorozatot eltárolni.
+ A Konyvtar osztálynak legyen egy add() függvénye, ami egy Konyv pointert vár, és beilleszti a listába.
+ A Konyvtar destruktora szabadítsa fel a könyveknek és sorozatoknak lefoglalt memóriát.
  
-
- ---- el�gs�ges szint hat�ra ----
-
- Mindegyik oszt�lyt lehessen << oper�torral ostream objektumra "k�ldeni" a fent le�rt formai megk�t�sek mellett.
- A Konyvtar osztalynak legyen [int idx] oper�tora, mely visszaad egy nem m�dos�that� pointert az idx-edik elemre,
- ha az l�tezik, egy�bk�nt nullptr-t.
- A Konyvtar-nak legyen egy rendez() f�ggv�nye, mely a k�nyveket szerz�, majd c�m szerinti ABC sorrendbe rendezi.
- A Konyvtar-nak legyen egy [string sorozatcim] oper�tora, mely list<const Konyv*> form�ban
- visszaadja az ahhoz a sorozathoz tartoz� k�nyvek list�j�t.
-
+ A Konyvtar-nak legyen egy print függvénye, mely kilistázza az összes könyvet, kötetet. A Konyv adatai a következő formában jelenjenek meg: "[Szerző] - [Cím] ([Év])", a Kotet adatai pedig "[Sorozatcím]/[Kötet sorszáma]: [Szerző] - [Cím] ([Év])" ([]-ek nélkül).
+ ---- elégséges szint határa ----
+ A Konyvtar-nak legyen egy db(string szerzo, string cim) függvénye, mely megadja, hogy egy adott szerzőtől egy adott című könyv/kötet hányszor van meg. (A kiadás éve irreleváns.)
+ Mindegyik osztályt lehessen << operátorral ostream objektumra "küldeni" a fent leírt formai megkötések mellett.
+ A Konyvtar osztalynak legyen [int idx] operátora, mely visszaad egy nem módosítható pointert az idx-edik elemre, ha az létezik, egyébként nullptr-t.
+ A Konyvtar-nak legyen egy rendez() függvénye, mely a könyveket szerző, majd cím szerinti ABC sorrendbe rendezi.
+ A Konyvtar-nak legyen egy [string sorozatcim] operátora, mely list<const Konyv*> formában visszaadja az ahhoz a sorozathoz tartozó könyvek listáját.
+ 
 */
 
 #include "Konyvtar.h"
